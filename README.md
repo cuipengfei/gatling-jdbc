@@ -4,9 +4,8 @@ JDBC support for Gatling
 [![Build Status](https://travis-ci.org/rbraeunlich/gatling-jdbc.svg?branch=master)](https://travis-ci.org/rbraeunlich/gatling-jdbc)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.code_n_roll.gatling/jdbc-gatling_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.code_n_roll.gatling/jdbc-gatling_2.12)
 
-
 The JDBC extension for Gatling was originally created to accompany a blog post that shows how to extend Gatling.
-Currently, five SQL operations are being supported. See below for the usage.
+Currently, five SQL operations are supported. See below for the usage.
 
 ## :exclamation: Attention :exclamation:
 
@@ -14,12 +13,12 @@ In order to avoid conflicts with `io.gatling:gatling-jdbc` the artifact name has
 Instead of `gatling-jdbc` it is now called `jdbc-gatling` (see issue #8). Apart from this, nothing changes. All package names etc. stayed the same.
 
 Also, by forking it from it's original position the group id and the packages have changed!
-The correct import is now `dev.code_n_roll.gatling....` and the group id changed to `dev.code-n-roll.gatling`.
+The correct import is now `com.github.cuipengfei....` and the group id changed to `com.github.cuipengfei`.
 
 ## Usage
 
 ```scala
-libraryDependencies += "dev.code_n_roll.gatling" %% "gatling-jdbc" % "version"
+libraryDependencies += "com.github.cuipengfei" %% "gatling-jdbc" % "version"
 ```
 
 ### General

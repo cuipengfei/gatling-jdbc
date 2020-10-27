@@ -1,4 +1,4 @@
-organization := "dev.code-n-roll.gatling"
+organization := "com.github.cuipengfei"
 name := "jdbc-gatling"
 scalaVersion := "2.12.8"
 libraryDependencies ++= Seq(
@@ -18,12 +18,12 @@ enablePlugins(GatlingPlugin)
 parallelExecution in Test := false
 
 //everything below this line is related to the project release
-homepage := Some(url("https://github.com/rbraeunlich/gatling-jdbc"))
-scmInfo := Some(ScmInfo(url("https://github.com/rbraeunlich/gatling-jdbc"), "git@github.com:rbraeunlich/gatling-jdbc.git"))
-developers := List(Developer("rbraeunlich",
-  "Ronny Bräunlich",
-  "r.braeunlich@gmail.com",
-  url("https://github.com/rbraeunlich")))
+homepage := Some(url("https://github.com/cuipengfei/gatling-jdbc"))
+scmInfo := Some(ScmInfo(url("https://github.com/cuipengfei/gatling-jdbc"), "git@github.com:cuipengfei/gatling-jdbc.git"))
+developers := List(Developer("cuipengfei",
+  "cuipengfei",
+  "none@email.com",
+  url("https://github.com/cuipengfei")))
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
 // Add sonatype repository settings
@@ -34,7 +34,7 @@ publishTo := Some(
     Opts.resolver.sonatypeStaging
 )
 
-sonatypeProfileName := "r.braeunlich"
+sonatypeProfileName := "com.github.cuipengfei"
 pomIncludeRepository := { _ => false }
 publishArtifact in Test := false
 publishMavenStyle := true
