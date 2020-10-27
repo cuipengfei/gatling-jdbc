@@ -10,8 +10,8 @@ libraryDependencies ++= Seq(
   "mysql" % "mysql-connector-java" % "8.0.15" % "test",
   "org.postgresql" % "postgresql" % "42.2.5" % "test",
   "org.scalatest" %% "scalatest" % "3.0.6" % "test",
-  "org.testcontainers" % "postgresql" % "1.10.6" % "test",
-  "org.testcontainers" % "mysql" % "1.10.6" % "test"
+  "org.testcontainers" % "postgresql" % "1.15.0-rc2" % "test",
+  "org.testcontainers" % "mysql" % "1.15.0-rc2" % "test"
 )
 enablePlugins(GatlingPlugin)
 
