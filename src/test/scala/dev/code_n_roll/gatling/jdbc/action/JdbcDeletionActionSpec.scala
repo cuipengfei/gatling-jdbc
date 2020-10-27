@@ -2,14 +2,9 @@ package dev.code_n_roll.gatling.jdbc.action
 
 import io.gatling.commons.stats.{KO, OK}
 import io.gatling.commons.util.DefaultClock
-import io.gatling.core.stats.writer.ResponseMessage
-import org.scalatest.Matchers.equal
-import org.scalatest.Matchers._
 import io.gatling.core.Predef._
-import io.gatling.core.action.Action
-import io.gatling.core.session.Session
-import scalikejdbc.DB
-import scalikejdbc._
+import io.gatling.core.stats.writer.ResponseMessage
+import scalikejdbc.{DB, _}
 
 /**
   * Created by ronny on 12.05.17.

@@ -17,13 +17,12 @@ package dev.code_n_roll.gatling.jdbc.mock
 
 import java.util.Date
 
+import akka.actor.ActorRef
+import com.typesafe.scalalogging.StrictLogging
 import io.gatling.commons.stats.Status
 import io.gatling.core.session.{GroupBlock, Session}
 import io.gatling.core.stats.StatsEngine
-import io.gatling.core.stats.message.ResponseTimings
 import io.gatling.core.stats.writer._
-import akka.actor.ActorRef
-import com.typesafe.scalalogging.StrictLogging
 
 class MockStatsEngine extends StatsEngine with StrictLogging {
 
@@ -36,13 +35,13 @@ class MockStatsEngine extends StatsEngine with StrictLogging {
   override def logUser(userMessage: UserMessage): Unit = {}
 
   override def logResponse(
-                            session:        Session,
-                            requestName:    String,
+                            session: Session,
+                            requestName: String,
                             startTimestamp: Long,
-                            endTimestamp:   Long,
-                            status:         Status,
-                            responseCode:   Option[String],
-                            message:        Option[String]
+                            endTimestamp: Long,
+                            status: Status,
+                            responseCode: Option[String],
+                            message: Option[String]
                           ): Unit =
     handle(ResponseMessage(
       session.scenario,

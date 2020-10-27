@@ -35,10 +35,10 @@ case class JdbcDeletionAction(requestName: Expression[String],
       tableString <- validatedTableName
       sqlString <- Success(s"DELETE FROM $tableString $wherePart")
     } yield Future {
-        DB autoCommit { implicit session =>
-          SQL(sqlString).map(rs => rs.toMap()).execute().apply()
-        }
+      DB autoCommit { implicit session =>
+        SQL(sqlString).map(rs => rs.toMap()).execute().apply()
       }
+    }
 
     result.foreach(_.onComplete(result => {
       next ! log(start, clock.nowMillis, result, requestName, session, statsEngine)

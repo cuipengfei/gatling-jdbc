@@ -18,14 +18,14 @@ import scala.util.{Failure, Try}
   * Created by ronny on 11.05.17.
   */
 case class JdbcSelectAction[T](requestName: Expression[String],
-                            what: Expression[String],
-                            from: Expression[String],
-                            where: Option[Expression[String]],
-                            checks: List[JdbcCheck[T]],
-                            mapFunction: WrappedResultSet => T,
-                            clock: Clock,
-                            statsEngine: StatsEngine,
-                            next: Action) extends JdbcAction {
+                               what: Expression[String],
+                               from: Expression[String],
+                               where: Option[Expression[String]],
+                               checks: List[JdbcCheck[T]],
+                               mapFunction: WrappedResultSet => T,
+                               clock: Clock,
+                               statsEngine: StatsEngine,
+                               next: Action) extends JdbcAction {
 
   override def name: String = genName("jdbcSelect")
 

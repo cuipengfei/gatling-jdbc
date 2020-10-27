@@ -1,12 +1,11 @@
 package dev.code_n_roll.gatling.jdbc.action
 
-import dev.code_n_roll.gatling.jdbc.JdbcCheck
+import dev.code_n_roll.gatling.jdbc.Predef._
 import io.gatling.commons.stats.{KO, OK}
+import io.gatling.commons.util.DefaultClock
 import io.gatling.core.Predef._
 import io.gatling.core.stats.writer.ResponseMessage
 import scalikejdbc._
-import dev.code_n_roll.gatling.jdbc.Predef._
-import io.gatling.commons.util.DefaultClock
 
 /**
   * Created by ronny on 15.05.17.

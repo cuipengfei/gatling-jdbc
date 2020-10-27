@@ -4,11 +4,7 @@ import dev.code_n_roll.gatling.jdbc.builder.column.ColumnHelper._
 import io.gatling.commons.stats.{KO, OK}
 import io.gatling.commons.util.DefaultClock
 import io.gatling.core.Predef._
-import io.gatling.core.action.Action
-import io.gatling.core.session.Session
 import io.gatling.core.stats.writer.ResponseMessage
-import org.scalatest.Matchers._
-import org.scalatest._
 import scalikejdbc._
 
 /**

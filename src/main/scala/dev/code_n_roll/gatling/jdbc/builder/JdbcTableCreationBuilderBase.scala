@@ -4,8 +4,6 @@ import dev.code_n_roll.gatling.jdbc.action.JdbcTableCreationActionBuilder
 import dev.code_n_roll.gatling.jdbc.builder.column.ColumnDefinition
 import io.gatling.core.session.Expression
 
-import scala.collection.mutable.ArrayBuffer
-
 /**
   * Created by ronny on 10.05.17.
   */

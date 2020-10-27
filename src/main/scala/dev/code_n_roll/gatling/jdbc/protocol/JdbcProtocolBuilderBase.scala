@@ -34,7 +34,7 @@ case class JdbcProtocolBuilderDriverStep(url: String, username: String, password
 
 case class JdbcProtocolBuilderConnectionPoolSettingsStep(url: String, username: String, password: String, driver: String) {
 
-  def build =  JdbcProtocol(url, username, password, driver, None)
+  def build = JdbcProtocol(url, username, password, driver, None)
 
   def connectionPoolSettings(connectionPoolSettings: CPSettings) = JdbcProtocolBuilder(url, username, password, driver, connectionPoolSettings)
 

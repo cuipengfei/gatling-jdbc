@@ -46,7 +46,7 @@ case class NextAction(session: Session, var called: Boolean = false) extends Blo
   override def name: String = "next Action"
 
   override def execute(s: Session): Unit = {
-    if(s == session) called = true
+    if (s == session) called = true
     super.execute(s)
   }
 

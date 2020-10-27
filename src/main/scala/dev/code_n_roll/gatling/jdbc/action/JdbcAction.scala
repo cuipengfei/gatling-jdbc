@@ -4,7 +4,6 @@ import io.gatling.commons.stats.{KO, OK}
 import io.gatling.core.action.ChainableAction
 import io.gatling.core.session.{Expression, Session}
 import io.gatling.core.stats.StatsEngine
-import io.gatling.core.stats.message.ResponseTimings
 import io.gatling.core.util.NameGen
 
 import scala.util.Try

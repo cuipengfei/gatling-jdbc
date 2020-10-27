@@ -1,6 +1,5 @@
 package dev.code_n_roll.gatling.jdbc.builder
 
-import io.gatling.core.config.GatlingConfiguration
 import io.gatling.core.session.Expression
 
 /**

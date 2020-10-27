@@ -1,8 +1,8 @@
 package dev.code_n_roll.gatling.jdbc.protocol
 
-import io.gatling.core.{CoreComponents, protocol}
 import io.gatling.core.config.GatlingConfiguration
 import io.gatling.core.protocol.{Protocol, ProtocolKey}
+import io.gatling.core.{CoreComponents, protocol}
 import scalikejdbc.ConnectionPool.CPSettings
 import scalikejdbc._
 

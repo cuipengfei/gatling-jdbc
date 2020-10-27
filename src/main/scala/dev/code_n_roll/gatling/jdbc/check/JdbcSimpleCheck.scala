@@ -1,15 +1,11 @@
 package dev.code_n_roll.gatling.jdbc.check
 
-import java.sql.ResultSet
 import java.util
 
 import dev.code_n_roll.gatling.jdbc.JdbcCheck
 import io.gatling.commons.validation.{Failure, Validation}
-import io.gatling.core.check.{Check, CheckResult}
+import io.gatling.core.check.CheckResult
 import io.gatling.core.session.Session
-import scalikejdbc.WrappedResultSet
-
-import scala.collection.mutable
 
 /**
   * Created by ronny on 15.05.17.

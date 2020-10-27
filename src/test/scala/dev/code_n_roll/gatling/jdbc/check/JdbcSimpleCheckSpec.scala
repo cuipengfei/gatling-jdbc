@@ -3,12 +3,10 @@ package dev.code_n_roll.gatling.jdbc.check
 import java.time.Instant
 import java.util
 
-import io.gatling.commons.validation.{Failure, Success}
+import io.gatling.commons.validation.Failure
 import io.gatling.core.check.CheckResult
 import io.gatling.core.session.Session
 import org.scalatest.{FlatSpec, Matchers}
-
-import scala.collection.mutable
 
 /**
   * Created by ronny on 15.05.17.

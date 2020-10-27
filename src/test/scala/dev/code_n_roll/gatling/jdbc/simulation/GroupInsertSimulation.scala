@@ -7,7 +7,6 @@ import io.gatling.core.scenario.Simulation
 import scalikejdbc.{GlobalSettings, LoggingSQLAndTimeSettings}
 
 import scala.concurrent.duration._
-import scala.util.Random
 
 /**
   * Simulation to check that the reporting of times also works when using a group.

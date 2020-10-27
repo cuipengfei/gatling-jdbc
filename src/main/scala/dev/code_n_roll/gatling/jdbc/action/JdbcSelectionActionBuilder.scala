@@ -2,7 +2,6 @@ package dev.code_n_roll.gatling.jdbc.action
 
 import dev.code_n_roll.gatling.jdbc.check.JdbcCheckActionBuilder
 import io.gatling.core.action.Action
-import io.gatling.core.action.builder.ActionBuilder
 import io.gatling.core.session.Expression
 import io.gatling.core.structure.ScenarioContext
 import scalikejdbc.WrappedResultSet

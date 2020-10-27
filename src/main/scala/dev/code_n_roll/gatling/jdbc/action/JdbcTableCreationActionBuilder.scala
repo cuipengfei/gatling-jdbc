@@ -6,8 +6,6 @@ import io.gatling.core.action.builder.ActionBuilder
 import io.gatling.core.session.Expression
 import io.gatling.core.structure.ScenarioContext
 
-import scala.collection.mutable.ArrayBuffer
-
 /**
   * Created by ronny on 10.05.17.
   */

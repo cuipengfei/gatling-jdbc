@@ -1,12 +1,11 @@
 package dev.code_n_roll.gatling.jdbc.action
 
-import java.util.concurrent.TimeUnit
-
 import io.gatling.commons.stats.{KO, OK}
 import io.gatling.commons.util.DefaultClock
 import io.gatling.core.Predef._
 import io.gatling.core.stats.writer.ResponseMessage
 import scalikejdbc._
+
 /**
   * Created by ronny on 15.05.17.
   */
@@ -27,7 +26,7 @@ class JdbcDropTableActionSpec extends JdbcActionSpec {
   }
 
   it should "drop the table with the specified name" in {
-    DB autoCommit{ implicit session =>
+    DB autoCommit { implicit session =>
       sql"""CREATE TABLE delete_me(id INTEGER PRIMARY KEY )""".execute().apply()
     }
     val latchAction = BlockingLatchAction()
@@ -49,7 +48,7 @@ class JdbcDropTableActionSpec extends JdbcActionSpec {
   }
 
   it should "log an OK value when being successful" in {
-    DB autoCommit{ implicit session =>
+    DB autoCommit { implicit session =>
       sql"""CREATE TABLE delete_other(id INTEGER PRIMARY KEY )""".execute().apply()
     }
     val latchAction = BlockingLatchAction()

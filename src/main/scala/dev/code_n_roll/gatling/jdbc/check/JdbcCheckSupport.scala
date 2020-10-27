@@ -1,7 +1,6 @@
 package dev.code_n_roll.gatling.jdbc.check
 
 import dev.code_n_roll.gatling.jdbc.JdbcCheck
-import dev.code_n_roll.gatling.jdbc.Predef.ManyAnyResult
 import io.gatling.core.check._
 
 import scala.annotation.implicitNotFound

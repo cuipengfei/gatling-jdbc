@@ -1,9 +1,9 @@
 package dev.code_n_roll.gatling.jdbc
 
-import io.gatling.core.session.Expression
-import dev.code_n_roll.gatling.jdbc.protocol.{JdbcProtocol, JdbcProtocolBuilder, JdbcProtocolBuilderBase, JdbcProtocolBuilderConnectionPoolSettingsStep}
 import dev.code_n_roll.gatling.jdbc.builder.JdbcActionBuilderBase
 import dev.code_n_roll.gatling.jdbc.check.JdbcCheckSupport
+import dev.code_n_roll.gatling.jdbc.protocol.{JdbcProtocol, JdbcProtocolBuilder, JdbcProtocolBuilderBase, JdbcProtocolBuilderConnectionPoolSettingsStep}
+import io.gatling.core.session.Expression
 
 import scala.language.implicitConversions
 
