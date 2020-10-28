@@ -13,6 +13,7 @@ import scala.concurrent.Future
 case class JdbcUpdateAction[T](requestName: Expression[String],
                                table: Expression[String],
                                values: Expression[String],
+                               where: Option[Expression[String]],
                                clock: Clock,
                                statsEngine: StatsEngine,
                                next: Action) extends JdbcAction {
@@ -23,9 +24,13 @@ case class JdbcUpdateAction[T](requestName: Expression[String],
     val start = clock.nowMillis
     val validatedTableName = table.apply(session)
     val validatedValues = values.apply(session)
+    val validatedWhere = where.map(_.apply(session))
 
-    val sqlString = (validatedTableName, validatedValues) match {
-      case (Success(table), Success(values)) => s"UPDATE $table SET $values"
+    val sqlString = (validatedTableName, validatedValues, validatedWhere) match {
+      case (Success(table), Success(values), None) =>
+        s"UPDATE $table SET $values"
+      case (Success(table), Success(values), Some(Success(whereStr))) =>
+        s"UPDATE $table SET $values WHERE $whereStr"
       case _ => throw new IllegalArgumentException
     }
 

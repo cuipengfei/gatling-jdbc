@@ -46,6 +46,7 @@ class UpdateSimulation extends Simulation {
       jdbc("update")
         .update("bar")
         .set("xyz=123")
+        .where("abc<5")
     )
     .pause(1)
     .exec(
