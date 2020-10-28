@@ -56,9 +56,10 @@ class JdbcCreateTableActionSpec extends JdbcActionSpec {
 
     action.execute(session)
     waitForLatch(latchAction)
-    action2.execute(session)
 
+    action2.execute(session)
     waitForLatch(latchAction2)
+
     statsEngine.dataWriterMsg should have length 2
     statsEngine.dataWriterMsg.head(session).toOption.get.asInstanceOf[ResponseMessage].status should equal(KO)
   }

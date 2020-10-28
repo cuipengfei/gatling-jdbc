@@ -1,7 +1,7 @@
 # Gatling JDBC Extension
 JDBC support for Gatling
 
-[![Build Status](https://travis-ci.org/rbraeunlich/gatling-jdbc.svg?branch=master)](https://travis-ci.org/rbraeunlich/gatling-jdbc)
+[![Build Status](https://travis-ci.org/cuipengfei/gatling-jdbc.svg?branch=master)](https://travis-ci.org/github/cuipengfei/gatling-jdbc)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/dev.code_n_roll.gatling/jdbc-gatling_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/dev.code_n_roll.gatling/jdbc-gatling_2.12)
 
 The JDBC extension for Gatling was originally created to accompany a blog post that shows how to extend Gatling.

@@ -39,6 +39,7 @@ case class JdbcInsertAction(requestName: Expression[String],
         }
       }
     }
+
     result.foreach(_.onComplete(result => {
       next ! log(start, clock.nowMillis, result, requestName, session, statsEngine)
     }))
