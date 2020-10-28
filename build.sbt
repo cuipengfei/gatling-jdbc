@@ -22,7 +22,7 @@ homepage := Some(url("https://github.com/cuipengfei/gatling-jdbc"))
 scmInfo := Some(ScmInfo(url("https://github.com/cuipengfei/gatling-jdbc"), "git@github.com:cuipengfei/gatling-jdbc.git"))
 developers := List(Developer("cuipengfei",
   "cuipengfei",
-  "none@email.com",
+  "cuipengfei2008@gmail.com",
   url("https://github.com/cuipengfei")))
 licenses += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
