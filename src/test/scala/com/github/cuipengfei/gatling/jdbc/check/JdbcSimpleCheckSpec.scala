@@ -1,11 +1,11 @@
 package com.github.cuipengfei.gatling.jdbc.check
 
-import java.time.Instant
 import java.util
 
 import io.gatling.commons.validation.Failure
 import io.gatling.core.check.CheckResult
 import io.gatling.core.session.Session
+import io.netty.channel.nio.NioEventLoopGroup
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
@@ -13,7 +13,7 @@ import org.scalatest.{FlatSpec, Matchers}
   */
 class JdbcSimpleCheckSpec extends FlatSpec with Matchers {
 
-  val session = Session("scenario", 0, Instant.now.getEpochSecond)
+  val session = Session("scenario", 0, new NioEventLoopGroup().next())
 
   implicit val cache: util.Map[Any, Any] = new util.HashMap[Any, Any]()
 

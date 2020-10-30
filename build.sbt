@@ -1,15 +1,15 @@
 organization := "com.github.cuipengfei"
 name := "jdbc-gatling"
-scalaVersion := "2.12.8"
+scalaVersion := "2.12.12"
 libraryDependencies ++= Seq(
-  "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.2.1",
-  "io.gatling" % "gatling-test-framework" % "3.2.1",
-  "org.scalikejdbc" %% "scalikejdbc" % "3.3.5",
-  "com.h2database" % "h2" % "1.4.198",
+  "io.gatling.highcharts" % "gatling-charts-highcharts" % "3.4.1",
+  "io.gatling" % "gatling-test-framework" % "3.4.1",
+  "org.scalikejdbc" %% "scalikejdbc" % "3.5.0",
+  "com.h2database" % "h2" % "1.4.200",
   "ch.qos.logback" % "logback-classic" % "1.2.3",
-  "mysql" % "mysql-connector-java" % "8.0.15" % "test",
-  "org.postgresql" % "postgresql" % "42.2.5" % "test",
-  "org.scalatest" %% "scalatest" % "3.0.6" % "test",
+  "mysql" % "mysql-connector-java" % "8.0.22" % "test",
+  "org.postgresql" % "postgresql" % "42.2.18" % "test",
+  "org.scalatest" %% "scalatest" % "3.0.9" % "test",
   "org.testcontainers" % "postgresql" % "1.15.0-rc2" % "test",
   "org.testcontainers" % "mysql" % "1.15.0-rc2" % "test"
 )

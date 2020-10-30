@@ -6,6 +6,7 @@ import java.util.concurrent.TimeUnit
 import com.github.cuipengfei.gatling.jdbc.mock.MockStatsEngine
 import io.gatling.core.action.Action
 import io.gatling.core.session.Session
+import io.netty.channel.nio.NioEventLoopGroup
 import org.scalatest.{BeforeAndAfter, BeforeAndAfterAll, FlatSpec, Matchers}
 import scalikejdbc.{ConnectionPool, GlobalSettings, LoggingSQLAndTimeSettings}
 
@@ -14,7 +15,7 @@ import scalikejdbc.{ConnectionPool, GlobalSettings, LoggingSQLAndTimeSettings}
   */
 trait JdbcActionSpec extends FlatSpec with BeforeAndAfter with BeforeAndAfterAll with Matchers {
 
-  val session = Session("scenario", 0, Instant.now().getEpochSecond)
+  val session = Session("scenario", 0, new NioEventLoopGroup().next())
   val next = new Action {
     override def name: String = "mockAction"
 

@@ -7,19 +7,21 @@ import com.github.cuipengfei.gatling.jdbc.builder.column.ColumnHelper._
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import org.testcontainers.containers.PostgreSQLContainer
-import scalikejdbc.{GlobalSettings, LoggingSQLAndTimeSettings}
+import org.testcontainers.utility.DockerImageName.parse
 
 /**
   * Created by ronny on 10.05.17.
   */
 class InsertPostgresSimulation extends Simulation {
 
-  val postgres = new PostgreSQLContainer()
+  val postgres = new PostgreSQLContainer(parse("postgres").withTag("13"))
   postgres.start()
 
-  val jdbcConfig = jdbc.url(postgres.getJdbcUrl).username(postgres.getUsername).password(postgres.getPassword).driver(postgres.getDriverClassName)
-
-  GlobalSettings.loggingSQLAndTime = LoggingSQLAndTimeSettings(singleLineMode = true, logLevel = 'warn)
+  val jdbcConfig = jdbc
+    .url(postgres.getJdbcUrl)
+    .username(postgres.getUsername)
+    .password(postgres.getPassword)
+    .driver(postgres.getDriverClassName)
 
   val tableIdentFeeder = for (x <- 0 until 10) yield Map("tableId" -> x)
 
@@ -50,7 +52,6 @@ class InsertPostgresSimulation extends Simulation {
         .values("'${unique}${n}'")
       )
   }
-
 
   setUp(
     createTables.inject(atOnceUsers(10)),

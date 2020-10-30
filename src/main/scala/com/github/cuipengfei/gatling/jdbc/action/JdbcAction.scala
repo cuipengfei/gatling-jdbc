@@ -19,7 +19,7 @@ trait JdbcAction extends ChainableAction with NameGen {
       case scala.util.Failure(exception) => (KO, Some(exception.getMessage))
     }
     requestName.apply(session).foreach { resolvedRequestName =>
-      statsEngine.logResponse(session, resolvedRequestName, start, end, status, None, message)
+      statsEngine.logResponse(session.scenario, session.groups, resolvedRequestName, start, end, status, None, message)
     }
     session.logGroupRequestTimings(start, end)
   }

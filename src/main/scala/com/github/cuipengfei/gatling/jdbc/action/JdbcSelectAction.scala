@@ -51,7 +51,7 @@ case class JdbcSelectAction[T](requestName: Expression[String],
         next ! Try(performChecks(session, start, value)).recover {
           case err =>
             val logRequestName = requestName(session).toOption.getOrElse("JdbcSelectAction")
-            statsEngine.logCrash(session, logRequestName, err.getMessage)
+            statsEngine.logCrash(session.scenario, session.groups, logRequestName, err.getMessage)
             session.markAsFailed
         }.get
       case fail: Failure[_] =>
@@ -64,7 +64,7 @@ case class JdbcSelectAction[T](requestName: Expression[String],
     error match {
       case Some(failure) =>
         requestName.apply(session).map { resolvedRequestName =>
-          statsEngine.logResponse(session, resolvedRequestName, start, clock.nowMillis, KO, None, None)
+          statsEngine.logResponse(session.scenario, session.groups, resolvedRequestName, start, clock.nowMillis, KO, None, None)
         }
         modifiedSession.markAsFailed
       case _ =>

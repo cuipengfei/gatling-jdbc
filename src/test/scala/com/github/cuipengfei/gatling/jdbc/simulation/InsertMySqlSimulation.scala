@@ -7,19 +7,21 @@ import com.github.cuipengfei.gatling.jdbc.builder.column.ColumnHelper._
 import io.gatling.core.Predef._
 import io.gatling.core.scenario.Simulation
 import org.testcontainers.containers.MySQLContainer
-import scalikejdbc.{GlobalSettings, LoggingSQLAndTimeSettings}
+import org.testcontainers.utility.DockerImageName.parse
 
 /**
   * Created by ronny on 10.05.17.
   */
 class InsertMySqlSimulation extends Simulation {
 
-  val mySql = new MySQLContainer()
+  val mySql = new MySQLContainer(parse("mysql").withTag("8.0.22"))
   mySql.start()
 
-  val jdbcConfig = jdbc.url(mySql.getJdbcUrl).username(mySql.getUsername).password(mySql.getPassword).driver(mySql.getDriverClassName)
-
-  GlobalSettings.loggingSQLAndTime = LoggingSQLAndTimeSettings(singleLineMode = true, logLevel = 'warn)
+  val jdbcConfig = jdbc
+    .url(mySql.getJdbcUrl)
+    .username(mySql.getUsername)
+    .password(mySql.getPassword)
+    .driver(mySql.getDriverClassName)
 
   val tableIdentFeeder = for (x <- 0 until 10) yield Map("tableId" -> x)
 
@@ -50,7 +52,6 @@ class InsertMySqlSimulation extends Simulation {
         .values("'${unique}${n}'")
       )
   }
-
 
   setUp(
     createTables.inject(atOnceUsers(10)),
